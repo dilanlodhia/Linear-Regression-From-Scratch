@@ -22,7 +22,7 @@ class LinearRegression():
 
     def predict(self, X):
         '''
-        Computes the dot product of the dataset and vector of weights. This essentially is the equation of the linear regression model.
+        Computes the dot product of the dataset and vector of weights.
         It returns a prediction vector of y.
         '''
         y_pred = np.dot(X, self.W) + self.b
@@ -30,7 +30,7 @@ class LinearRegression():
 
     def update_W_b(self, W, b):
         '''
-        Updates W and b once they have been optimized using the minimize_loss method.
+        Updates W and b once they have been optimized using Gradient Descent Optimisation.
         '''
         self.W = W
         self.b = b
@@ -59,8 +59,7 @@ class LinearRegression():
     @staticmethod
     def mse(y_prediction, y_true):
         '''
-        The loss function. Calcluates the difference between each true y value and our predicted y value, squares the value to 
-        make sure it is positive and sums each of these together and divides by the number of examples for an average.
+        The loss function, Mean Squared Error.
         '''
         errors = y_prediction - y_true
         squared_error = errors ** 2
